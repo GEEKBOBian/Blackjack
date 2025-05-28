@@ -6,17 +6,39 @@ public class Card {
     public int value; //ex: 1, 2, 10, 15, 21
 
     public Card (int pnumber, int psuit){
-        number = "ten";
+        number = "" + pnumber;
         suit = "diamonds";
         isEleven = false;
         value = pnumber;
 
+
+        if(pnumber == 1){
+            number = "ace";
+            value = 1;
+        }
+        if(pnumber == 11){
+            number = "jack";
+            value = 10;
+        }
+        if(pnumber == 12){
+            number = "queen";
+            value = 10;
+        }
         if(pnumber == 13){
             number = "king";
             value = 10;
         }
-        if(psuit ==2){
+        if(psuit ==0){
+            suit = "diamonds";
+        }
+        if(psuit ==1){
             suit = "hearts";
+        }
+        if(psuit ==2){
+            suit = "clubs";
+        }
+        if(psuit ==3){
+            suit = "spades";
         }
     }
 

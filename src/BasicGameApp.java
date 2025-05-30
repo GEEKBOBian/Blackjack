@@ -46,6 +46,7 @@ public class BasicGameApp {
         d.dhand[0].print();
         d.print();
 
+
     }//end of basic game const
 
 }

@@ -32,21 +32,33 @@ public class BasicGameApp {
         }// end of y loop
 
         p= new Player();
-        p.phand[0]= deck[0];
-        p.phand[1]=deck[1];
-        System.out.println("*****");
-        p.phand[0].print();
-        p.print();
-
-        System.out.println("dealer's info");
         d= new Dealer();
-        d.dhand[0]= deck[(int)(Math.random()*52)];
-        d.dhand[1]=deck[3];
+        deal();
         System.out.println("*");
-        d.dhand[0].print();
+        System.out.println("player info");
+        p.print();
+        System.out.println("*");
+        System.out.println("dealer's info");
         d.print();
 
 
     }//end of basic game const
+
+    public void deal(){
+        d.dhand[0]= deck[(int)(Math.random()*52)];
+        d.dhand[1]=deck[(int)(Math.random()*52)];
+
+
+        p.phand[0] = deck [(int)(Math.random()*52)];
+        p.phand[1] = deck [(int)(Math.random()*52)];
+    }
+
+    public void shuffle(){
+        System.out.println("shuffle deck");
+        for(int x = 0; x<deck.length; x++){
+            int random = (int) (Math.random() * 52);
+            deck[x] = deck[random];
+        }
+    }
 
 }

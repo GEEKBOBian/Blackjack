@@ -59,6 +59,7 @@ public class BasicGameApp {
             int random = (int) (Math.random() * 52);
             deck[x] = deck[random];
         }
+
     }
 
 }

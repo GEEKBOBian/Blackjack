@@ -24,13 +24,14 @@ public class BasicGameApp {
 
             for (int x = 0; x < 13; x++) {
                 Card c = new Card(x + 1, y);
-                c.print();
+                //c.print();
 
                 deck[z] = c;
                 z++;
             }
         }// end of y loop
-
+shuffle();
+        printDeck();
         p= new Player();
         d= new Dealer();
         deal();
@@ -57,9 +58,20 @@ public class BasicGameApp {
         System.out.println("shuffle deck");
         for(int x = 0; x<deck.length; x++){
             int random = (int) (Math.random() * 52);
+            Card t = deck[x];
             deck[x] = deck[random];
+            deck[random] = t;
         }
 
     }
+    public void printDeck(){
+
+            for(int x = 0; x< deck.length; x++) {
+                System.out.println(x);
+                deck[x].print();
+
+            }
+            }
+
 
 }
